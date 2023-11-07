@@ -53,7 +53,25 @@ public class Player {
         inventory.useBombs();
     }
 
+    // Method to use a health potion from the inventory
     public void useHealthPotion() {
-        inventory.useHealthPotions();
+        // Check if there is a health potion to use
+        if (inventory.hasHealthPotions()) {
+            // Use the health potion and restore 1 life point
+            inventory.useHealthPotions();
+            if (life < 5) {
+                life++;
+                System.out.println("Used a health potion. Life restored by 1 point.");
+            } else {
+                System.out.println("Life is already at maximum. Health potion saved for later.");
+            }
+        } else {
+            System.out.println("Out of health potions!");
+        }
+    }
+
+    // Method to check if the player is still alive
+    public boolean isAlive() {
+        return life > 0;
     }
 }

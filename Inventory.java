@@ -68,4 +68,9 @@ public class Inventory {
             System.out.println("Out of health potions!");
         }
     }
+
+        // Method to check if there are health potions in the inventory
+        public boolean hasHealthPotions() {
+            return healthPotions > 0;
+        }
 }

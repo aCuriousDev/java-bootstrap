@@ -55,10 +55,21 @@ public class Game {
                     player.useHealthPotion();
                     break;
             }
+
+            // Check if the player is still alive after each action
+            if (!player.isAlive()) {
+                System.out.println("Player has lost all life points. Game over.");
+                break; // Exit the game loop if the player is not alive
+            }
+
         } while (!input.equals("0"));
-        // Exit the loop when the player chooses to quit
         scanner.close();
-        System.out.println("Game over. Thank you for playing!");
+        // Display a different message if the game ended because of zero life
+        if (player.isAlive()) {
+            System.out.println("Game over. Thank you for playing!");
+        } else {
+            System.out.println("Game over. Try again!");
+        }
     }
 
     private static int requestAmount(Scanner scanner, String item) {
