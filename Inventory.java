@@ -1,20 +1,25 @@
 public class Inventory {
+    // Current count of coins, bombs, and health potions in the inventory
     private int coins;
     private int bombs;
     private int healthPotions;
 
-    private final int MAX_CAPACITY = 100; // Example of a max capacity for each item
+    // Maximum capacity for each item type in the inventory
+    private final int MAX_CAPACITY = 100; 
 
+    // Initialize inventory with zero items
     public Inventory() {
         this.coins = 0;
         this.bombs = 0;
         this.healthPotions = 0;
     }
 
+    // Display the current count of all items in the inventory
     public void display() {
         System.out.println("Inventory - Coins: " + coins + " Bombs: " + bombs + " Health Potions: " + healthPotions);
     }
 
+    // Add a specified amount of coins, bombs, or health potions to the inventory
     public void addCoins(int amount) {
         if (coins + amount <= MAX_CAPACITY) {
             coins += amount;
@@ -39,6 +44,7 @@ public class Inventory {
         }
     }
 
+    // Use a specified amount of coins or a single bomb/health potion
     public void useCoins(int amount) {
         if (coins - amount >= 0) {
             coins -= amount;
@@ -62,6 +68,4 @@ public class Inventory {
             System.out.println("Out of health potions!");
         }
     }
-
-    // Additional getters and setters as needed...
 }

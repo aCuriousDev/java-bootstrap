@@ -1,12 +1,14 @@
 import java.util.Scanner;
 
 public class Game {
+    // Main game loop, handles user input and calls player actions
     public static void main(String[] args) {
         Player player = new Player();
         Scanner scanner = new Scanner(System.in);
         String input;
 
         do {
+            // Print the game menu and handle the player's choices
             System.out.println("\nWelcome to the Game! Choose an action:");
             System.out.println("(1) Display Status");
             System.out.println("(2) Add Life");
@@ -20,9 +22,11 @@ public class Game {
             System.out.println("(0) Quit");
             System.out.print("Enter your choice: ");
 
+            // Process the player's menu selection
             input = scanner.nextLine();
 
             switch (input) {
+                // Call corresponding player methods based on user input
                 case "1":
                     player.displayStatus();
                     break;
@@ -52,7 +56,7 @@ public class Game {
                     break;
             }
         } while (!input.equals("0"));
-
+        // Exit the loop when the player chooses to quit
         scanner.close();
         System.out.println("Game over. Thank you for playing!");
     }
