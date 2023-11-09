@@ -8,7 +8,7 @@ public class Entity_Handler {
     private static final int initialHpValue = 10;
 
     public Entity_Handler(int hp, int speed, int strength) {
-        this.hp = hp;
+        this.hp = 10;
         this.heart = 3;
         this.speed = speed;
         this.strength = strength;
